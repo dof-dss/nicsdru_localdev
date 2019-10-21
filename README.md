@@ -56,7 +56,7 @@ This may take a while depending on your network speed and machine spec. Docker w
 if you don't have them, which could be several GB to download at first. Once you have them and Lando's provisioning
 script has run then future spin-up times will be very quick.
 
-4. Create feature branches and push/pull in accordance with the git workflow of the team.
+5. Create feature branches and push/pull in accordance with the git workflow of the team.
 
 # How your project should look once setup has completed
 
