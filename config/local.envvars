@@ -1,5 +1,8 @@
 # This file shows environment variables for local development only.
 # Values for other environment values should be set from provisioning software and/or vault.
+# =========== DRUPAL PROJECT URL: SET BELOW ===============
+DRUPAL_PROJECT_URL=git@github.com/dof-dss/nicsdru_yoursitename.git
+# =========================================================
 DB_HOST=database
 DB_USER=drupal
 DB_PASS=drupal

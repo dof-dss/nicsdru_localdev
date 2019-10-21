@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-DRUPAL_REPO_URL=https://github.com/dof-dss/nicsdru_origins_drupal.git
+# VARIABLE BELOW COMES FROM READING A VALUE FROM LANDO ENV VARS AND MUST BE SET
+# BEFORE STARTING THE PROJECT OR THERE WON'T BE A SUCCESSFUL GIT CLONE OPERATION
+# AND THE SCRIPT WILL FAIL.
+DRUPAL_REPO_URL=`grep DRUPAL_PROJECT_URL /app/config/local.envvars | sed 's/^.*=//'`
 DRUPAL_ROOT=/app/drupal/web
 DRUPAL_SETTINGS_FILE=$DRUPAL_ROOT/sites/default/settings.php
 DRUPAL_SERVICES_FILE=$DRUPAL_ROOT/sites/default/services.yml
@@ -46,10 +49,18 @@ if [ ! -d "/app/drupal/web/themes/custom" ]; then
   mkdir -p /app/drupal/web/themes/custom
 fi
 
-if [ ! -d "/app/drupal/web/themes/custom" ]; then
-  echo "Creating folder structure for config sync and config split..."
+if [ ! -d "/app/drupal/config/sync" ]; then
+  echo "Creating folder for Drupal config..."
   mkdir -p /app/drupal/config/sync
+fi
+
+if [ ! -d "/app/drupal/config/production" ]; then
+  echo "Creating folder for production config split..."
   mkdir -p /app/drupal/config/production
+fi
+
+if [ ! -d "/app/drupal/config/local" ]; then
+  echo "Creating folder for local development config split..."
   mkdir -p /app/drupal/config/local
 fi
 

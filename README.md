@@ -19,6 +19,7 @@ A framework for local development, using the NICS Origins archetype.
     - Functional testing using Nightwatch.js, based on Drupal core profile.
     - Composer, in case you don't want to or cannot run on your host system.
     - XDebug enable/disable.
+    - Drush 8.x and Drupal console
 - Origins profile/archetype to give you:
     - Circle CI integration.
     - Standardised Drupal features/config for:
@@ -28,15 +29,28 @@ A framework for local development, using the NICS Origins archetype.
 
 # Pre-requisites
 
-- Docker
+- [Lando](https://github.com/lando/lando) [Installation instructions](https://docs.lando.dev/basics/installation.html)
 
-# How do I use this?
+# Get started
 
-Follow these steps:
+## Repository setup
 
-1. Create a new repository for the Drupal project: under github.com/dof-dss using the Origins repository as a template.
-2. Fork this repository to allow you to work locally and clone to your machine. Eg: `git clone git@github.com:dof-dss/nicsdru_localdev.git nicsdru_projectname`
-3. `cd projectname && lando start`
+NICS Drupal projects originate from a template repository that you will need to use when setting up a new repo for your project.
+
+1. Create a new repository for the Drupal project in GitHub under [github.com/dof-dss](https://github.com/dof-dss) using the [Origins repository](https://github.com/dof-dss/nicsdru_origins_drupal) as a template.
+
+To allow you to to work locally, you should fork this repository to your own GitHub namespace.
+
+2. Fork this repository allow Lando to run the project on your machine. Eg: `git clone git@github.com:dof-dss/nicsdru_localdev.git nicsdru_projectname`
+
+3. Set up a few key values:
+
+`config/local.envvars`: set the URL of the new repository created in step 1.
+
+4. Start Lando/provision the containers
+
+`cd nicsdru_projectname && lando start`
+
 4. Create feature branches and push/pull in accordance with the git workflow of the team.
 
 # How your project should look once setup has completed
@@ -74,7 +88,7 @@ drupal/ [where github.com:dof-dss/nicsdru_your-site-name will install to via com
 └── exports/ [anything coming out from Lando; eg: screenshots]
 ```
 
-# Tips for working with your project
+# Tips / troubleshooting
 
 - Your project will contain a few git repos/remotes, be mindful of which repository/remote you are operating against.
 - Install https://github.com/thoughtworks/talisman on your host system to avoid committing any sensitive content.
