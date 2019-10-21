@@ -45,11 +45,16 @@ To allow you to to work locally, you should fork this repository to your own Git
 
 3. Set up a few key values:
 
-`config/local.envvars`: set the URL of the new repository created in step 1.
+- `config/local.envvars`: set the URL of the new repository created in step 1.
+- `cp .lando.example.yml .lando.local.yml`: set a local application name and any local overrides or options.
 
-4. Start Lando/provision the containers
+4. Start Lando / provision the containers:
 
 `cd nicsdru_projectname && lando start`
+
+This may take a while depending on your network speed and machine spec. Docker will need to fetch the container images
+if you don't have them, which could be several GB to download at first. Once you have them and Lando's provisioning
+script has run then future spin-up times will be very quick.
 
 4. Create feature branches and push/pull in accordance with the git workflow of the team.
 
