@@ -1,0 +1,20 @@
+# This file shows environment variables for local development only.
+# Values for other environment values should be set from provisioning software and/or vault.
+DB_HOST=database
+DB_USER=drupal
+DB_PASS=drupal
+DB_NAME=drupal
+DB_PREFIX=
+DB_PORT=3306
+DB_NAMESPACE=Drupal\Core\Database\Driver\mysql
+DB_DRIVER=mysql
+FILE_PRIVATE_PATH=../private
+CONFIG_SYNC_DIRECTORY=../config/sync
+MEMCACHE_HOSTNAME=memcached
+MEMCACHE_PORT=11211
+HASH_SALT="Set me to value from drush php-eval 'echo \Drupal\Component\Utility\Crypt::randomBytesBase64(55)"
+NW_TEST_USER_PREFIX=nw_test
+CONFIG_READONLY=
+#SIMPLEI_ENV_COLOUR=#637C16
+#SIMPLEI_ENV_NAME=Local
+#GOOGLE_MAP_API_KEY=your-api-key-here
