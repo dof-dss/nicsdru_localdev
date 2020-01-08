@@ -1,3 +1,10 @@
+## NOTE
+
+The recent update to Drupal Core composer scaffolding scripts can cause a Runtime Exception that the default.services.yml could not be deleted. To fix this in Lando:
+
+1. cd /mysite/drupal8/web/sites
+2. chmod u+w default
+
 # NICS Drupal 8 local development framework
 
 A framework for local development, using the NICS Origins archetype.
